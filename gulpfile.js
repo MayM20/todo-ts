@@ -11,7 +11,7 @@ var run = require('run-sequence'); //all the variables are defined, now we can s
 
 var dir = './build'; 
 
-gulp.task('html', () => {
+gulp.task('html', ()=> {
     return gulp.src('./templates/*.pug')
     .pipe( pug() ) //pipe means that will convenrt it to html 
     .pipe( prettify() )

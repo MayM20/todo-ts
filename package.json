@@ -35,5 +35,10 @@
     "prettify": "^0.1.7",
     "run-sequence": "^2.2.1",
     "typescript": "^2.7.2"
+  },
+  "dependencies": {
+    "browserify": "^16.1.1",
+    "tsify": "^3.0.4",
+    "vinyl-source-stream": "^2.0.0"
   }
 }

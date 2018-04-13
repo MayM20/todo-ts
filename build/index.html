@@ -3,9 +3,22 @@
   <head>
     <title>To do List</title>
     <link href="css/styles.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    <header></header>
-    <h1>To Do</h1>
+    <div class="app">
+      <header>
+        <img class="logo" src="images/logo.png">
+        <h1>To Do List</h1>
+      </header>
+    </div>
+    <form id="task-form">
+      <input id="task-input" type="text" placeholder="add a task">
+      <button id="task-add" type="submit">Add</button>
+    </form>
+    <main></main>
+    <ul id="task-list"></ul>
+    <footer></footer>
   </body>
 </html>
+<script src="./js/main.js"></script>

@@ -1,3 +1,97 @@
+$theme-color: #74a0ed;
+$theme-light: lighten( $theme-color, 25%);
+$theme-dark: darken( $theme-color, 25%);
+$ff: 'verdana';
+
+@mixin reset{
+  margin: 0;
+  padding: 0;
+}
+
+@mixin display($type){
+  display: $type;
+}
+
+@mixin flex($direction){
+  @include display(flex);
+  flex-direction: $direction;
+}
+
+body{
+  @include reset; 
+  font-family: $ff;
+}
+
+header{
+  background-color: $theme-light; 
+  @include flex(row);
+  justify-content: space-between;
+  align-items: center;
+  .logo{
+    padding: 5px;
+    max-width:60px;
+  }
+  h1{
+    margin: 0;
+    padding: 5px;
+  }
+}
+
+#task-form{
+  @include flex(row);
+  input{
+    flex: 1;
+    padding: 5px;
+    box-sizing: border-box;
+    border: 1px solid $theme-color;
+    background-color: $theme-light;
+  }
+  input:focus{
+    background-color: white;
+    outline: none;
+  }
+  button{
+    max-width: 100px;
+    padding: 5px;
+    background-color: $theme-dark;
+  }
+}
+
+#task-list{
+  @include reset;
+  list-style: none;
+  li{
+    border-bottom: 1px solid #cccccc;
+    .task-container{
+      @include flex(row);
+      justify-content: space-between;
+      .task-name{
+        padding: 1em;
+      }
+      .task-buttons{
+        @include flex(row);
+        button{
+          width: 48px;
+          height: 48px;
+          font-size: 1.5em;
+          background-color: transparent;
+          border:1px solid transparent;
+        }
+        button:focus{
+          outline: none;
+          background-color: #cccccc;
+          
+        }
+        button[data-function='status']{
+          font-size: 1em;
+        }
+      }
+    }
+  }
+}
+
+/*example of mixin
+
 $main-color: yellow; 
 
 @mixin reset{
@@ -8,4 +102,4 @@ $main-color: yellow;
 body{
   @include reset; 
   background-color: $main-color;
-}
+}*/
