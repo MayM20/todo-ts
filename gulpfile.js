@@ -8,15 +8,32 @@ var cleancss = require('gulp-clean-css');
 var browsersync = require('browser-sync');
 var watch = require('gulp-watch');
 var run = require('run-sequence'); //all the variables are defined, now we can start creating things, pipe means send through
+var browserify = require('browserify');
+var source = require('vinyl-source-stream');
+var tsify = require('tsify');
 
-var dir = './build'; 
+var buildpath = './build'; 
 
-gulp.task('html', ()=> {
+gulp.task('ts', function(){
+  return browserify({
+    baseDir: '.',
+    debug: true,
+    entries:['ts/todo.ts'],
+    cache: {},
+    packageCache: {}
+  })
+  .plugin(tsify)
+  .bundle()
+  .pipe(source('main.js'))
+  .pipe(gulp.dest( buildpath + "/js"));
+});
+
+gulp.task('html', function () {
     return gulp.src('./templates/*.pug')
     .pipe( pug() ) //pipe means that will convenrt it to html 
     .pipe( prettify() )
     .pipe( browsersync.reload( {stream:true}) )
-    .pipe( gulp.dest(dir) );
+    .pipe( gulp.dest(buildpath) );
 });
 
 gulp.task('scss', ()=> {
@@ -24,7 +41,7 @@ gulp.task('scss', ()=> {
     .pipe( scss () )
     .pipe( cleancss () )
     .pipe( browsersync.reload( {stream:true}) )
-    .pipe( gulp.dest(dir+'/css') ); //i want it to go to the css directory instead of just the general build
+    .pipe( gulp.dest(buildpath+'/css') ); //i want it to go to the css directory instead of just the general build
 });
 
 gulp.task('js', ()=>{
@@ -35,11 +52,11 @@ gulp.task('js', ()=>{
             outFile: 'main.js'
         }
     ))
-    .pipe( gulp.dest(dir+'/js') );
+    .pipe( gulp.dest(buildpath+'/js') );
 });
 
 gulp.task('browsersync', ()=>{
-    browsersync.init({server:{baseDir: dir} })
+    browsersync.init({server:{baseDir: buildpath} })
 });
 
 gulp.task('watch', ()=>{

@@ -1,19 +1,25 @@
 doctype html
 html
   head
-     title To do List
+     title To Do List
      link(href='css/styles.css', rel='stylesheet')
      meta(name='viewport', content='width=device-width, initial-scale=1')
   body
     .app
       header
+    .head
         img.logo(src='images/logo.png')
-        h1 To Do List
+        h1 Welcome to: Maylen To Due List
+  
     form#task-form
-      input#task-input(type='text', placeholder='add a task')
+      input#task-input(type='text', placeholder='Type here to add a new task...')
       button#task-add(type='submit') Add
     main
+    ul.nav.nav-tabs
+      li.nav-item
+        a.nav-link.active(href='#') Active
+      li.nav-item
+        a.nav-link(href='#') Link
     ul#task-list
-    
     footer
 script(src='./js/main.js')

@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>To do List</title>
+    <title>To Do List</title>
     <link href="css/styles.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
     <div class="app">
-      <header>
-        <img class="logo" src="images/logo.png">
-        <h1>To Do List</h1>
-      </header>
+      <header></header>
+    </div>
+    <div class="head">
+      <img class="logo" src="images/logo.png">
+      <h1>Welcome to: Maylen To Due List</h1>
     </div>
     <form id="task-form">
-      <input id="task-input" type="text" placeholder="add a task">
+      <input id="task-input" type="text" placeholder="Type here to add a new task...">
       <button id="task-add" type="submit">Add</button>
     </form>
     <main></main>
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Active</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+    </ul>
     <ul id="task-list"></ul>
     <footer></footer>
   </body>

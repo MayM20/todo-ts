@@ -1,6 +1,7 @@
-$theme-color: #74a0ed;
+$theme-color: #9d74ed;
 $theme-light: lighten( $theme-color, 25%);
 $theme-dark: darken( $theme-color, 25%);
+$primary-color-dark: #d73a49;
 $ff: 'verdana';
 
 @mixin reset{
@@ -20,8 +21,9 @@ $ff: 'verdana';
 body{
   @include reset; 
   font-family: $ff;
+  background-color: $theme-color;
 }
-
+/*
 header{
   background-color: $theme-light; 
   @include flex(row);
@@ -35,8 +37,31 @@ header{
     margin: 0;
     padding: 5px;
   }
+}*/
+//new added
+.head {
+    text-align: center;
+    //border-top: 15px solid $primary-color-dark;
+    background-color: $theme-color;
+    margin: 0 0 10px 0;
+  .logo{
+    padding: 5px;
+    max-width:60px;
+  }
+    h1 {
+        color: black;
+        font-family: $ff;
+        text-align: center; 
+        padding: 10px;
+        margin: 0;
+    }
 }
-
+//ned added for tab 
+.nav-tabs>li {
+    width: 50%;
+    text-align: center;
+}
+//
 #task-form{
   @include flex(row);
   input{
@@ -53,7 +78,7 @@ header{
   button{
     max-width: 100px;
     padding: 5px;
-    background-color: $theme-dark;
+    background-color: #A09A2E;
   }
 }
 
@@ -65,6 +90,7 @@ header{
     .task-container{
       @include flex(row);
       justify-content: space-between;
+      background-color: white;
       .task-name{
         padding: 1em;
       }
@@ -88,18 +114,11 @@ header{
       }
     }
   }
+  li[data-status="true"]{
+    background-color: #eeeeee;
+    .task-name{
+      text-decoration: line-through;
+      opacity: 0.5;
+    }
+  }
 }
-
-/*example of mixin
-
-$main-color: yellow; 
-
-@mixin reset{
-  margin: 0;
-  padding: 0;
-}
-
-body{
-  @include reset; 
-  background-color: $main-color;
-}*/
