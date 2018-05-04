@@ -16,6 +16,7 @@ export class DataStorage{
       callback( false);
     }
   }
+  
   //in this section we need to return the data
   read( callback ){//doesnt take arguments but will return items from storage
     let data = this.storage.getItem('taskdata');
