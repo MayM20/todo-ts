@@ -1,3 +1,4 @@
+import * as moment from 'moment';
 import { Task } from '../ts/task';
 import { TaskManager } from '../ts/taskmanager';
 import { ListView } from '../ts/listview';
