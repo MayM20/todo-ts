@@ -28,6 +28,7 @@ export class ListView{
       this.list.appendChild( fragment );
     } );
   }
+  
   clear(){
     this.list.innerHTML = '';//clears list before rending the array
   }
