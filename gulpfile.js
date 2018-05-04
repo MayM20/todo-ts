@@ -60,8 +60,8 @@ gulp.task('browsersync', ()=>{
 });
 
 gulp.task('watch', ()=>{
-    run('html', 'scss', 'js', 'browsersync', () =>{});
+    run('html', 'scss', 'ts', 'browsersync', () =>{});
     gulp.watch('./templates/*.pug', ['html']);
     gulp.watch('./scss/*.scss', ['scss']);
-    gulp.watch('./ts/*.ts', ['js']);
+    gulp.watch('./ts/*.ts', ['ts']);
 });
