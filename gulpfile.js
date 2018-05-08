@@ -44,6 +44,7 @@ gulp.task('scss', ()=> {
     .pipe( gulp.dest(buildpath+'/css') ); //i want it to go to the css directory instead of just the general build
 });
 
+
 gulp.task('js', ()=>{
     return gulp.src('./ts/*.ts')
     .pipe( typescript(
