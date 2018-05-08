@@ -1,4 +1,5 @@
 import { Task } from '../ts/task';
+import * as moment from 'moment';//new
 
 export class ListView{
   list:HTMLElement;
@@ -10,12 +11,16 @@ export class ListView{
       let id = task.id;
       let name = task.name;
       let status = task.status; 
+      let idtime:number = parseInt(id);
+      let timestamp = moment ( idtime ).fromNow();
       let template = `<li id="${id}" data-status="${status}">
                       <div class="task-container">
                       <div class="task-name">${name}</div>
+                      <div class="task-age">${timestamp}</div>
                       <div class="task-buttons">
                         <button type="button" data-function="status">&#x2714;</button>
                         <button type="button" data-function="delete">&times;</button>
+                        <button type="button" data-function="delete">&#x3e;</button>
                       </div>
                     </div>
                     </li>`;
@@ -23,6 +28,7 @@ export class ListView{
       this.list.appendChild( fragment );
     } );
   }
+  
   clear(){
     this.list.innerHTML = '';//clears list before rending the array
   }

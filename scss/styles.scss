@@ -93,6 +93,11 @@ header{
       background-color: white;
       .task-name{
         padding: 1em;
+        text-transform: capitalize;
+      }
+      .task-age{
+        font-size: 0.6em;
+        padding: 5px 10px;
       }
       .task-buttons{
         @include flex(row);
