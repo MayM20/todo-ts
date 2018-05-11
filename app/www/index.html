@@ -1,24 +1,41 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>To do List</title>
+    <title>To Do List</title>
     <link href="css/styles.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
     <div class="app">
-      <header>
-        <img class="logo" src="images/logo.png">
-        <h1>To Do List</h1>
-      </header>
+      <header></header>
+    </div>
+    <div class="head">
+      <img class="logo" src="images/logo.png">
+      <h1>Welcome to: Maylen To Due List</h1>
     </div>
     <form id="task-form">
-      <input id="task-input" type="text" placeholder="add a task">
+      <input id="task-input" type="text" placeholder="Type here to add a new task...">
       <button id="task-add" type="submit">Add</button>
     </form>
     <main></main>
     <ul id="task-list"></ul>
-    <footer></footer>
+    <div class="modal" id="addTaskModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>Add a note</h2>
+        </div>
+        <div class="modal-body">
+          <form id="task-form">
+            <textarea id="task-input" contenteditable="true" type="text" placeholder="tap to write a note" required></textarea>
+            <button id="task-add" type="submit"> Edit </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <button id="addTaskButton" type="button"> +</button>
+    </footer>
   </body>
 </html>
 <script src="./js/main.js"></script>

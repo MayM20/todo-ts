@@ -15,11 +15,15 @@ html
       input#task-input(type='text', placeholder='Type here to add a new task...')
       button#task-add(type='submit') Add
     main
-    ul.nav.nav-tabs
-      li.nav-item
-        a.nav-link.active(href='#') Active
-      li.nav-item
-        a.nav-link(href='#') Link
     ul#task-list
+    #addNoteModal.modal
+        .modal-content
+          .modal-header
+            span.close &times;
+            h2 Add a note
+          .modal-body
+            form#task-form
+              textarea#note-input(contenteditable='true', type='text',placeholder='tap to write a note',required)
+              button#note-save(type='submit')  Edit 
     footer
 script(src='./js/main.js')

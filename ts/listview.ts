@@ -1,5 +1,5 @@
 import { Task } from '../ts/task';
-import * as moment from 'moment';//new
+import * as moment from 'moment';
 
 export class ListView{
   list:HTMLElement;
@@ -20,7 +20,7 @@ export class ListView{
                       <div class="task-buttons">
                         <button type="button" data-function="status">&#x2714;</button>
                         <button type="button" data-function="delete">&times;</button>
-                        <button type="button" data-function="delete">&#x3e;</button>
+                        <button type="button" data-function="open">&#x3e;</button>
                       </div>
                     </div>
                     </li>`;

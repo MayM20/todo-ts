@@ -23,22 +23,7 @@ body{
   font-family: $ff;
   background-color: $theme-color;
 }
-/*
-header{
-  background-color: $theme-light; 
-  @include flex(row);
-  justify-content: space-between;
-  align-items: center;
-  .logo{
-    padding: 5px;
-    max-width:60px;
-  }
-  h1{
-    margin: 0;
-    padding: 5px;
-  }
-}*/
-//new added
+
 .head {
     text-align: center;
     //border-top: 15px solid $primary-color-dark;
@@ -56,12 +41,7 @@ header{
         margin: 0;
     }
 }
-//ned added for tab 
-.nav-tabs>li {
-    width: 50%;
-    text-align: center;
-}
-//
+
 #task-form{
   @include flex(row);
   input{
@@ -126,4 +106,84 @@ header{
       opacity: 0.5;
     }
   }
+}
+
+//MODAL background
+.modal {
+  display: none;//is hidden by default
+  position: fixed;//stay in place
+  z-index: 1;//sit on top
+  padding-top: 100px;
+  //location of the box
+  left: 0;
+  top: 0;
+  //full width
+  width: 100%;
+  //full height
+  height: 100%;
+  //enable scrill if needed
+  overflow: auto;
+  //fallback color
+  background-color: black;
+  //black with opacity
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+//Modal content-box
+.modal-content {
+    background-color: #fefefe;
+    border-radius: 5px;
+    margin: auto;
+    padding: 10px;
+    border-top: 1px solid #888;
+    width: 80%; 
+}
+//Modal header
+.modal-header {
+    padding: 10px;
+    background-color: #fefefe;
+    color: #ed7474;
+    font-family: sans-serif; 
+}
+//Modal body inside
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px 20px 10px; 
+}
+//Modal body textarea, getting text
+.modal-body #task-form textarea {
+      padding: 10px 5px;
+      height: 150px;
+      border-radius: 3px;
+      border: none;
+      box-shadow: 0px 1px 4px #c6c6c6; 
+}
+.modal-body #task-form textarea:focus {
+      background-color: white;
+      outline: none; 
+}
+//Save-edit button note
+.modal-body #task-form button {
+      color: white;
+      background-color: #ed7474;
+      max-width: 100px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 3px;
+      box-shadow: 0px 1px 4px #c6c6c6; 
+}
+//The close button for modal
+.modal .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold; 
+}
+.modal .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer; 
 }

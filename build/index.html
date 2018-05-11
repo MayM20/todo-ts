@@ -18,16 +18,24 @@
       <button id="task-add" type="submit">Add</button>
     </form>
     <main></main>
-    <ul class="nav nav-tabs">
-      <li class="nav-item">
-        <a class="nav-link active" href="#">Active</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-    </ul>
     <ul id="task-list"></ul>
-    <footer></footer>
+    <div class="modal" id="addNoteModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>Add a note</h2>
+        </div>
+        <div class="modal-body">
+          <form id="task-form">
+            <textarea id="note-input" contenteditable="true" type="text" placeholder="tap to write a note" required></textarea>
+            <button id="note-save" type="submit"> Edit </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <button id="addTaskButton" type="button"> +</button>
+    </footer>
   </body>
 </html>
 <script src="./js/main.js"></script>
