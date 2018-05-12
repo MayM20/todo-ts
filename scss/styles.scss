@@ -87,8 +87,9 @@ body{
         text-transform: capitalize;
       }
       .task-age{
-        font-size: 0.6em;
+        font-size: 0.7em;
         padding: 5px 10px;
+        color: blue;
       }
       .task-buttons{
         //@include flex(row);
