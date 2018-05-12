@@ -9,12 +9,13 @@ html
       header
     .head
         img.logo(src='images/logo.png')
-        h1 Welcome to: Maylen To Due List
+        h1 Welcome to: Maylen 2-DO List
   
     form#task-form
       input#task-input(type='text', placeholder='Type here to add a new task...')
-      button#task-add(type='submit') Add
+      button#task-add(type='submit') ADD
     main
+      h1 TASKS
     ul#task-list
     #addNoteModal.modal
         .modal-content
@@ -22,8 +23,8 @@ html
             span.close &times;
             h2 Add a note
           .modal-body
-            form#task-form
               textarea#note-input(contenteditable='true', type='text',placeholder='tap to write a note',required)
-              button#note-save(type='submit')  Edit 
+          .modal-footer
+              button#note-save(type='submit')  Save 
     footer
 script(src='./js/main.js')

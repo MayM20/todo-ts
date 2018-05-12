@@ -11,13 +11,15 @@
     </div>
     <div class="head">
       <img class="logo" src="images/logo.png">
-      <h1>Welcome to: Maylen To Due List</h1>
+      <h1>Welcome to: Maylen 2-DO List</h1>
     </div>
     <form id="task-form">
       <input id="task-input" type="text" placeholder="Type here to add a new task...">
-      <button id="task-add" type="submit">Add</button>
+      <button id="task-add" type="submit">ADD</button>
     </form>
-    <main></main>
+    <main>
+      <h1>TASKS</h1>
+    </main>
     <ul id="task-list"></ul>
     <div class="modal" id="addNoteModal">
       <div class="modal-content">
@@ -26,16 +28,14 @@
           <h2>Add a note</h2>
         </div>
         <div class="modal-body">
-          <form id="task-form">
-            <textarea id="note-input" contenteditable="true" type="text" placeholder="tap to write a note" required></textarea>
-            <button id="note-save" type="submit"> Edit </button>
-          </form>
+          <textarea id="note-input" contenteditable="true" type="text" placeholder="tap to write a note" required></textarea>
+        </div>
+        <div class="modal-footer">
+          <button id="note-save" type="submit"> Save </button>
         </div>
       </div>
     </div>
-    <footer>
-      <button id="addTaskButton" type="button"> +</button>
-    </footer>
+    <footer></footer>
   </body>
 </html>
 <script src="./js/main.js"></script>
