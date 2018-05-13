@@ -67,7 +67,11 @@ cordova emulate ios
 * [Typescrit](https://www.typescriptlang.org/index.html) - Superset of JavaScript which primarily provides optional static typing, classes and interfaces. 
 * [Sass](https://sass-lang.com/documentation/file.SASS_REFERENCE.html) - Used to generate CSS styles.
 
-## Authors
+## Demonstration To Do List Application
+
+* [To List Application](https://youtu.be/KZQKB7-bPhY)
+
+## Author
 
 * **Maylen Medina**
 
